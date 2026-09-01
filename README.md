@@ -1,5 +1,7 @@
 # dsh-doctor — Fix DeepSeek Harness `cannot resolve profile bundle` & web profile install failures (pnpm allowBuilds / ERR_PNPM_GIT_DEP_PREPARE / unsupported JSON schema)
 
+[![test](https://github.com/gxinxing/dsh-doctor/actions/workflows/test.yml/badge.svg)](https://github.com/gxinxing/dsh-doctor/actions) [![Stars](https://img.shields.io/github/stars/gxinxing/dsh-doctor)](https://github.com/gxinxing/dsh-doctor/stargazers) [![Downloads](https://img.shields.io/github/downloads/gxinxing/dsh-doctor/total)](https://github.com/gxinxing/dsh-doctor/releases) [![License](https://img.shields.io/github/license/gxinxing/dsh-doctor)](LICENSE)
+
 > A tiny, dependency-free doctor for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`). One command tells you **why `dsh web` (or any profile) won't boot after an update**, and `dsh-doctor fix` repairs it.
 
 If you landed here from a search for one of these errors, you're in the right place:
@@ -11,6 +13,8 @@ If you landed here from a search for one of these errors, you're in the right pl
 - `dsh plugin … pnpm not found` / `dsh plugin` hangs while downloading pnpm via corepack
 
 **Keywords:** DeepSeek Harness, dsh, cannot resolve profile bundle, profile bundle, pnpm allowBuilds, ERR_PNPM_GIT_DEP_PREPARE_NOT_ALLOWED, git dependency commit drift, corepack pnpm shim hang, unsupported JSON schema, dsh-tools schema compiler, web profile install failed.
+
+→ Real error logs paired with `doctor` output: [Troubleshooting examples](examples/troubleshooting.md).
 
 ---
 
