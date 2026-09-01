@@ -14,7 +14,7 @@ If you landed here from a search for one of these errors, you're in the right pl
 
 **Keywords:** DeepSeek Harness, dsh, cannot resolve profile bundle, profile bundle, pnpm allowBuilds, ERR_PNPM_GIT_DEP_PREPARE_NOT_ALLOWED, git dependency commit drift, corepack pnpm shim hang, unsupported JSON schema, dsh-tools schema compiler, web profile install failed.
 
-→ Real error logs paired with `doctor` output: [Troubleshooting examples](examples/troubleshooting.md).
+→ Real error logs paired with `doctor` output: [Troubleshooting examples](examples/troubleshooting.md) · [headless profile case](examples/headless-profile.md).
 
 ---
 
@@ -34,12 +34,22 @@ Plus a second layer: once deps are back, a local plugin written for an older `ds
 
 ## Install
 
+One-liner (drops it into `~/.local/bin`):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/gxinxing/dsh-doctor/main/install.sh | bash
+```
+
+Or fetch the script directly:
+
 ```bash
 curl -fsSL https://raw.githubusercontent.com/gxinxing/dsh-doctor/main/doctor.sh -o dsh-doctor
 chmod +x dsh-doctor
 # or just clone:
 git clone https://github.com/gxinxing/dsh-doctor.git && cd dsh-doctor
 ```
+
+Keep it fresh: `./doctor.sh update` (or `dsh-doctor update`).
 
 > Requires `bash` and a DeepSeek Harness install. No other dependencies.
 

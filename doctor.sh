@@ -29,6 +29,7 @@ while [ $# -gt 0 ]; do
   case "$1" in
     -p|--profile) PROFILE="${2:-web}"; shift 2 ;;
     fix)          MODE="fix"; shift ;;
+    update)       MODE="update"; shift ;;
     -h|--help)    sed -n '2,24p' "$0"; exit 0 ;;
     *) echo "unknown arg: $1" >&2; exit 2 ;;
   esac
@@ -125,6 +126,14 @@ echo "  three error classes:"
 echo "    cannot resolve bundle   -> cd $PROFILE_DIR && $PNPM install"
 echo "    unsupported JSON schema -> fix local plugin: objects need additionalProperties (bool), required must be true if present"
 echo "    ERR_PNPM_GIT_DEP_*       -> pin the git dep to the allowBuilds hash, then $PNPM install"
+
+if [ "$MODE" = "update" ]; then
+  SELF="$(cd "$(dirname "$0")" && pwd)/$(basename "$0")"
+  URL="https://raw.githubusercontent.com/gxinxing/dsh-doctor/main/doctor.sh"
+  echo "== updating dsh-doctor from $URL =="
+  curl -fsSL "$URL" -o "$SELF" && chmod +x "$SELF" && echo "updated: $SELF"
+  exit 0
+fi
 
 if [ "$MODE" = "fix" ]; then
   echo; echo "== running fix: reinstall deps =="
