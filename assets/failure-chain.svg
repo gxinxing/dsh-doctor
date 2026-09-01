@@ -1,0 +1,33 @@
+<svg viewBox="0 0 680 464" width="100%" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>DSH web 启动失败的故障传导链</title>
+<desc>更新 DSH 后，未锁定的 git 依赖发生 commit 漂移，导致 allowBuilds 白名单失配、安装整体失败，最终使依赖解析静默回落并产生误导性报错。</desc>
+<rect x="0" y="0" width="680" height="464" rx="16" fill="#0d1117"/>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+</defs>
+<g>
+<rect x="140" y="40" width="400" height="56" rx="8" fill="#633806" stroke="#EF9F27" stroke-width="0.5"/>
+<text x="340" y="62" text-anchor="middle" dominant-baseline="central" font-family="var(--font-sans)" font-size="14" font-weight="500" fill="#FAC775">更新 DSH 至 0.1.1-rc.2</text>
+<text x="340" y="80" text-anchor="middle" dominant-baseline="central" font-family="var(--font-sans)" font-size="13" fill="#EF9F27">profile 依赖树需要重装</text>
+</g>
+<path d="M340 98 L340 150" fill="none" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow)"/>
+<g>
+<rect x="140" y="156" width="400" height="56" rx="8" fill="#633806" stroke="#EF9F27" stroke-width="0.5"/>
+<text x="340" y="178" text-anchor="middle" dominant-baseline="central" font-family="var(--font-sans)" font-size="14" font-weight="500" fill="#FAC775">git 依赖未 pin，且无 lockfile</text>
+<text x="340" y="196" text-anchor="middle" dominant-baseline="central" font-family="var(--font-sans)" font-size="13" fill="#EF9F27">dshmarket 每次解析到新 commit</text>
+</g>
+<path d="M340 214 L340 266" fill="none" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow)"/>
+<g>
+<rect x="140" y="272" width="400" height="56" rx="8" fill="#633806" stroke="#EF9F27" stroke-width="0.5"/>
+<text x="340" y="294" text-anchor="middle" dominant-baseline="central" font-family="var(--font-sans)" font-size="14" font-weight="500" fill="#FAC775">allowBuilds 白名单写死了旧 hash</text>
+<text x="340" y="312" text-anchor="middle" dominant-baseline="central" font-family="var(--font-sans)" font-size="13" fill="#EF9F27">pnpm fail-closed，整个 install 失败</text>
+</g>
+<path d="M340 330 L340 382" fill="none" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow)"/>
+<g>
+<rect x="140" y="388" width="400" height="56" rx="8" fill="#791F1F" stroke="#F09595" stroke-width="0.5"/>
+<text x="340" y="410" text-anchor="middle" dominant-baseline="central" font-family="var(--font-sans)" font-size="14" font-weight="500" fill="#F7C1C1">静默回落父级 node_modules</text>
+<text x="340" y="428" text-anchor="middle" dominant-baseline="central" font-family="var(--font-sans)" font-size="13" fill="#F09595">报错指向缺失的 bundle，真因被掩盖</text>
+</g>
+</svg>

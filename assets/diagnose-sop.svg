@@ -1,0 +1,46 @@
+<svg viewBox="0 0 680 284" width="100%" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>DSH web 启动失败的下次诊断 SOP</title>
+<desc>按报错表层症状分成三类，分别给出第一步动作：依赖未装用真 pnpm 重装、插件契约冲突改 schema、git 依赖 hash 漂移则 pin commit 并提交 lockfile。</desc>
+<rect x="0" y="0" width="680" height="284" rx="16" fill="#0d1117"/>
+<defs>
+<marker id="arrow2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+</defs>
+<text x="175" y="24" text-anchor="middle" font-family="var(--font-sans)" font-size="12" fill="#9DA7B3">症状（看报错）</text>
+<text x="500" y="24" text-anchor="middle" font-family="var(--font-sans)" font-size="12" fill="#9DA7B3">下一步动作</text>
+<g>
+<rect x="40" y="40" width="270" height="56" rx="8" fill="#791F1F" stroke="#F09595" stroke-width="0.5"/>
+<text x="175" y="62" text-anchor="middle" dominant-baseline="central" font-family="var(--font-sans)" font-size="14" font-weight="500" fill="#F7C1C1">cannot resolve bundle</text>
+<text x="175" y="80" text-anchor="middle" dominant-baseline="central" font-family="var(--font-sans)" font-size="13" fill="#F09595">依赖没装上</text>
+</g>
+<path d="M325 68 L352 68" fill="none" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow2)"/>
+<g>
+<rect x="360" y="40" width="280" height="56" rx="8" fill="#085041" stroke="#5DCAA5" stroke-width="0.5"/>
+<text x="500" y="62" text-anchor="middle" dominant-baseline="central" font-family="var(--font-sans)" font-size="14" font-weight="500" fill="#9FE1CB">用真 pnpm 重装</text>
+<text x="500" y="80" text-anchor="middle" dominant-baseline="central" font-family="var(--font-sans)" font-size="13" fill="#5DCAA5">~/.npm-global/bin/pnpm</text>
+</g>
+<g>
+<rect x="40" y="124" width="270" height="56" rx="8" fill="#791F1F" stroke="#F09595" stroke-width="0.5"/>
+<text x="175" y="146" text-anchor="middle" dominant-baseline="central" font-family="var(--font-sans)" font-size="14" font-weight="500" fill="#F7C1C1">unsupported JSON schema</text>
+<text x="175" y="164" text-anchor="middle" dominant-baseline="central" font-family="var(--font-sans)" font-size="13" fill="#F09595">插件契约与新版冲突</text>
+</g>
+<path d="M325 152 L352 152" fill="none" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow2)"/>
+<g>
+<rect x="360" y="124" width="280" height="56" rx="8" fill="#085041" stroke="#5DCAA5" stroke-width="0.5"/>
+<text x="500" y="146" text-anchor="middle" dominant-baseline="central" font-family="var(--font-sans)" font-size="14" font-weight="500" fill="#9FE1CB">按编译器规则改 schema</text>
+<text x="500" y="164" text-anchor="middle" dominant-baseline="central" font-family="var(--font-sans)" font-size="13" fill="#5DCAA5">required / additionalProperties</text>
+</g>
+<g>
+<rect x="40" y="208" width="270" height="56" rx="8" fill="#791F1F" stroke="#F09595" stroke-width="0.5"/>
+<text x="175" y="230" text-anchor="middle" dominant-baseline="central" font-family="var(--font-sans)" font-size="14" font-weight="500" fill="#F7C1C1">ERR_PNPM_GIT_DEP</text>
+<text x="175" y="248" text-anchor="middle" dominant-baseline="central" font-family="var(--font-sans)" font-size="13" fill="#F09595">git 依赖 hash 漂移</text>
+</g>
+<path d="M325 236 L352 236" fill="none" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow2)"/>
+<g>
+<rect x="360" y="208" width="280" height="56" rx="8" fill="#085041" stroke="#5DCAA5" stroke-width="0.5"/>
+<text x="500" y="230" text-anchor="middle" dominant-baseline="central" font-family="var(--font-sans)" font-size="14" font-weight="500" fill="#9FE1CB">pin commit 到白名单</text>
+<text x="500" y="248" text-anchor="middle" dominant-baseline="central" font-family="var(--font-sans)" font-size="13" fill="#5DCAA5">并提交 lockfile</text>
+</g>
+<text x="40" y="278" font-family="var(--font-sans)" font-size="12" fill="#9DA7B3">先跑 dsh-doctor 验证 profile 层，不启动服务</text>
+</svg>

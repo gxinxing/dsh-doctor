@@ -24,6 +24,10 @@ Three safe-by-default behaviors stack up and **point the error at the wrong thin
 
 Plus a second layer: once deps are back, a local plugin written for an older `dsh-tools` fails its stricter schema compiler (`required` must be `true`; objects need explicit `additionalProperties`).
 
+### The failure chain
+
+![Why dsh web fails after an update — failure chain](assets/failure-chain.svg)
+
 ## Install
 
 ```bash
@@ -56,6 +60,10 @@ Sample output:
 [OK]   git dependency pinned (drift risk off)
 [WARN] PATH pnpm is the corepack shim (dsh plugin hangs on it) — use ~/.npm-global/bin/pnpm
 ```
+
+### Quick diagnosis map
+
+![dsh-doctor diagnosis SOP by error class](assets/diagnose-sop.svg)
 
 ## What `doctor.sh` checks
 
